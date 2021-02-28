@@ -1,0 +1,155 @@
+html, body {
+    margin:0;
+    overflow: hidden;
+    background-color: whitesmoke;
+    height: 100vh;
+    width: 100vw;
+}
+
+.Container {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 85px 100%;
+    
+}
+
+#Navbar {
+    margin:0;
+    width: 100vw;
+    width: 100vw;
+    height: 85px;
+    background-color: hsl(109, 26%, 73%);
+    justify-items: right;
+}
+
+.navbutton {
+    float: right;
+    font-size: 18px;
+    text-align: center;
+    background-color: hsl(109, 100%, 20%);  
+    color:  hsl(0, 100%, 100%);
+    margin-left: 0px;
+    margin-right: 0px;
+    height: 85px;
+    width: 170px;
+    line-height: 85px;
+    border-left: 1px solid hsl(109, 39%, 66%); 
+}
+
+#Main {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 65vw 35vw;
+    /* background-color: hotpink; */
+}
+
+#Content {
+    width: 65vw;
+    height: auto;
+    /* background-color: indianred; */
+}
+
+#Circle {
+    width: 35vw;
+    height: auto;
+    /* background-color: lawngreen; */
+}
+
+#GreyCircle {
+    background-color: grey;
+    padding: 0;
+    width: 550px;
+    height: 550px;
+    border-radius: 50%;
+    overflow: hidden;
+    position:absolute;
+    z-index: 1;
+}
+/* https://stackoverflow.com/questions/14184494/segments-in-a-circle-using-css3/14185845 */
+.circWrapper {
+    position: absolute;
+    padding: 0;
+    margin-top: 0;
+    width: 550px;
+    height: 550px;
+    border-radius: 50%;
+    list-style: none;
+    overflow: hidden;
+    z-index: 2;
+  }
+
+.circ {
+    left: -100%;
+    width: 200%;
+    height: 200%;
+    position:absolute;
+    z-index: 2;
+}
+
+li {
+    overflow: hidden;
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 100%;
+    height: 100%;
+    transform-origin: 0% 100%;
+}
+
+li:first-child {
+    transform: rotate(0deg) skewY(160deg);
+}
+
+li:nth-child(2) {
+    transform: rotate(72deg) skewY(160deg);
+}
+
+li:nth-child(3) {
+    transform: rotate(144deg) skewY(160deg);
+}
+
+li:nth-child(4) {
+    transform: rotate(216deg) skewY(160deg);
+}
+
+li:nth-child(5) {
+    transform: rotate(288deg) skewY(160deg);
+}
+
+li:first-child .circ {
+    background: green;
+}
+
+li:nth-child(2) .circ {
+    background: tomato;
+  }
+  
+  li:nth-child(3) .circ {
+    background: aqua;
+  }
+  
+  li:nth-child(4) .circ {
+    background: yellow;
+  }
+  
+  li:nth-child(5) .circ {
+    background: blue;
+  }
+
+#HomeSpoke {
+    
+    position:absolute;
+    z-index: 2;
+}
+
+#CenterCircle {
+    height: 450px;
+    width: 450px;
+    background-color: white;
+    border-radius: 50%;
+    position:absolute;
+    z-index: 1000;
+    transform: translateY(50px) translateX(50px);
+}
