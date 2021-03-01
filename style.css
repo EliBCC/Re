@@ -5,42 +5,54 @@ html, body {
     height: 100vh;
     width: 100vw;
     color: white;
+    font-family: 'Roboto', sans-serif;
+}
+
+.h1 {
+    font-family: 'Raleway', sans-serif;
 }
 
 .Container {
     width: 100vw;
     height: 100vh;
     display: grid;
-    grid-template-rows: 85px 100%;
+    grid-template-rows: 77px 100%;
     
 }
 
 #Navbar {
     margin:0;
     width: 100vw;
-    width: 100vw;
-    height: 85px;
+    height: 77px;
     background-color: transparent;
     justify-items: right;
 }
 
 #logo {
-    background-color: #E7F498;
-    width: 85px;
-    height: 85px;
+    background-color: transparent;
+    height: 40px;
+    width: calc(321/162*40px);
     position: absolute;
+    margin-top: 16px;
+    margin-left: 20px;
+    background-image: url('./resources/Logo.png');
+    background-size: cover;
 }
 
 .navbutton {
     float: right;
-    font-size: 18px;
+    font-size: 20px;
     text-align: center;
     background-color: transparent; 
     margin-left: 0px;
     margin-right: 0px;
-    height: 85px;
+    height: 77px;
     width: 170px;
-    line-height: 85px;
+    line-height: 77px;
+}
+
+.navbutton:hover {
+    background-color: #5382ad;
 }
 
 #Main {
@@ -80,22 +92,21 @@ html, body {
 
 #cont {
     width: 725px;
-    height: 200px;
-    margin-top: 150px;
-    margin-left: 75px;
-    border-color: black;
-    border-style: dashed;
+    height: 150px;
+    margin-top: 200px;
+    margin-left: 100px;
     position: absolute;
 }
 
 #image {
     width: 725px;
-    height: 200px;
+    height: 400px;
     margin-top: 400px;
     margin-left: 75px;
-    border-color: black;
-    border-style: dashed;
     position: absolute;
+    background-size: cover;
+    background-image: url('./resources/Waterbottle.png');
+    background-size: cover;
 }
 
 #Circle {

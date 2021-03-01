@@ -4,6 +4,9 @@
     <meta charset="utf-8">
     <title>title</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,700;1,300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <script>
       var rotation = 0;
       const UP = 1;
@@ -19,28 +22,75 @@
       var buttons_dict = {
         "Home": {
           "Title": "<h1>Home</h1>",
-          "Text": "Home",
-          "Color": "#E7F498"
+          "Text": 
+            `Did you know that most plastic waterbottles are only useful for 12 minutes? What if that were 12 years?
+            <br>
+            With Re, you can find out how to be a concious custodian of the goods you bring into your home, so that we can achieve a circular economy.
+            <br>
+            To get started, search for a good below.`,
+          "Color": "#E7F498",
+          "Image": "url('./resources/Waterbottle.png')"
         },
         "Recycle": {
           "Title": "<h1>Recycle</h1>",
-          "Text": "Recycle",
-          "Color": "#99BEF6"
+          "Text": `
+            While goods should be used up until their lifespan, we’re aware they won’t always last. Here are options to make the most out of your good’s materials and convert them back into raw materials
+            <br>
+            - Sell a waterbottle if it still functions
+            <br>
+            - Donate it to someone else in need
+            <br>
+            - Recycle your waterbottle local recycling facility
+          `,
+          "Color": "#99BEF6",
+          "Image": "url('./resources/Recycle.png')"
         },
         "Remake": {
           "Title": "<h1>Remake</h1>",
-          "Text": "Remake",
-          "Color": "#85D983"
+          "Text": `
+          Sometimes goods may retain their forms but lose their functionality. We’ve collected some tips from the community on how you can reuse your object!
+            <br>
+            - Turn it into a planter
+            <br>
+            - Create dab painters
+            <br>
+            - An insect trapper
+            <br>
+            - Zipper containers
+            <br>
+            - DIY spray paint container
+            <br>
+            - Sprinkler
+          `,
+          "Color": "#85D983",
+          "Image": "url('./resources/Reuse.png')"
         },
         "Repair": {
           "Title": "<h1>Repair</h1>",
-          "Text": "Repair",
-          "Color": "#5E68C9"
+          "Text": `
+          Here are some community suggestions for repairing your good. These may not be permanent solutions but they’ll expand the lifespan of your good.
+            <br>
+            - Repaint your waterbottle
+            - Decorate your bottle with stickers or doodles
+            <br>
+            - Use a rubberband to replace the waterbottle seal
+          `,
+          "Color": "#5E68C9",
+          "Image": "url('./resources/Repair.png')"
         },
         "Find": {
           "Title": "<h1>Find</h1>",
-          "Text": "Find",
-          "Color": "#6AD3E1"
+          "Text": `
+            Looking to take custody of a good? Here are some ways to find your good within the circular economy 
+            <br>
+            - Reusable bottle instead of disposable
+            <br>
+            - Shop secondhand at thrift store
+            <br>
+            - Decorate your old bottle instead of buying new one
+          `,
+          "Color": "#6AD3E1",
+          "Image": "url('./resources/Obtain.png')"
         },
       }
       
@@ -94,6 +144,7 @@
           document.getElementById("cont").innerHTML = buttons_dict["Home"]["Text"];
           document.getElementById("PageText").style.color = buttons_dict["Home"]["Color"];
           document.getElementById("PageText").innerHTML = buttons_dict["Home"]["Title"];
+          document.getElementById("image").style.backgroundImage = buttons_dict["Home"]["Image"];
       }
 
       function recycleSpoke() {
@@ -111,6 +162,7 @@
           document.getElementById("cont").innerHTML = buttons_dict["Recycle"]["Text"];
           document.getElementById("PageText").style.color = buttons_dict["Recycle"]["Color"];
           document.getElementById("PageText").innerHTML = buttons_dict["Recycle"]["Title"];
+          document.getElementById("image").style.backgroundImage = buttons_dict["Recycle"]["Image"];
       }
 
       function remakeSpoke() {
@@ -128,6 +180,7 @@
           document.getElementById("cont").innerHTML = buttons_dict["Remake"]["Text"];
           document.getElementById("PageText").style.color = buttons_dict["Remake"]["Color"];
           document.getElementById("PageText").innerHTML = buttons_dict["Remake"]["Title"];
+          document.getElementById("image").style.backgroundImage = buttons_dict["Remake"]["Image"];
       }
 
       function repairSpoke() {
@@ -145,6 +198,7 @@
           document.getElementById("cont").innerHTML = buttons_dict["Repair"]["Text"];
           document.getElementById("PageText").style.color = buttons_dict["Repair"]["Color"];
           document.getElementById("PageText").innerHTML = buttons_dict["Repair"]["Title"];
+          document.getElementById("image").style.backgroundImage = buttons_dict["Repair"]["Image"];
       }
 
       function findSpoke() {
@@ -162,6 +216,7 @@
           document.getElementById("cont").innerHTML = buttons_dict["Find"]["Text"];
           document.getElementById("PageText").style.color = buttons_dict["Find"]["Color"];
           document.getElementById("PageText").innerHTML = buttons_dict["Find"]["Title"];
+          document.getElementById("image").style.backgroundImage = buttons_dict["Find"]["Image"];
       }
 
       function sleep(ms) {
@@ -181,16 +236,13 @@
             <input id=search placeholder="Search..."></input>
             <div id=search_button>?</div>
             <div id=cont>
-              Welcome to Re! 
+              Did you know that most plastic waterbottles are only useful for 12 minutes? What if that were 12 years?
               <br>
-              Here you can learn about the circular economy and how to participate
+              With Re, you can find out how to be a concious custodian of the goods you bring into your home, so that we can achieve a circular economy.
               <br>
-              Search for a good above, or click the nav circle on the right to explore
-              <br>
-              Or you can visit our learn more page
+              To get started, search for a good above, or navigate with the nav wheel on the right.
             </div>
             <div id=image>
-              Image
             </div>
           </div>
           <div id="Circle">
