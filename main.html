@@ -4,7 +4,27 @@
     <meta charset="utf-8">
     <title>title</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <!-- <script src="script.js"></script> -->
+    <script>
+      var rotation = 0;
+      const rotateCircle = async function () {
+          for(var i = 0; i < 36; i++){
+              rotation++;
+              document.getElementById("circWrapper").style.transform = "rotate(" + rotation + "deg)";
+              await sleep(1).then(() => { console.log("World!"); });
+          }
+          
+      }
+
+      function homeSpoke() {
+          console.log("homeSpoke");
+          rotateCircle();
+      }
+
+      function sleep(ms) {
+          return new Promise(resolve => setTimeout(resolve, ms));
+        }
+    </script>
   </head>
   <body>
     <div class="Container">
@@ -15,25 +35,50 @@
       </div>
       <div id="Main">
           <div id="Content">
-          
+            <input id=search placeholder="Search..."></input>
+            <div id=search_button></div>
+            <div id=cont>
+              Welcome to Re! 
+              <br>
+              Here you can learn about the circular economy and how to participate
+              <br>
+              Search for a good above, or click the nav circle on the right to explore
+              <br>
+              Or you can visit our learn more page
+            </div>
           </div>
           <div id="Circle">
             <div id="GreyCircle"></div>
-            <ul class="circWrapper">
+            <ul id="circWrapper">
               <li>
-                <div id="HomeSpoke" class="circ"></div>
+                <div id="HomeSpoke1" class="circ" onclick="homeSpoke()"></div>
               </li>
               <li>
-                <div id="FindSpoke" class="circ"></div>
+                <div id="FindSpoke1" class="circ"></div>
               </li>
               <li>
-                <div id="RepairSpoke" class="circ"></div>
+                <div id="RepairSpoke1" class="circ"></div>
               </li>
               <li>
-                <div id="RemakeSpoke" class="circ"></div>
+                <div id="RemakeSpoke1" class="circ"></div>
               </li>
               <li>
-                <div id="PassSpoke" class="circ"></div>
+                <div id="PassSpoke1" class="circ"></div>
+              </li>
+              <li>
+                <div id="HomeSpoke2" class="circ"></div>
+              </li>
+              <li>
+                <div id="FindSpoke2" class="circ"></div>
+              </li>
+              <li>
+                <div id="RepairSpoke2" class="circ"></div>
+              </li>
+              <li>
+                <div id="RemakeSpoke2" class="circ"></div>
+              </li>
+              <li>
+                <div id="PassSpoke2" class="circ"></div>
               </li>
             </ul>
               <div id="CenterCircle"></div>
