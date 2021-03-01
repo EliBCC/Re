@@ -4,21 +4,164 @@
     <meta charset="utf-8">
     <title>title</title>
     <link rel="stylesheet" href="style.css">
-    <!-- <script src="script.js"></script> -->
     <script>
       var rotation = 0;
-      const rotateCircle = async function () {
+      const UP = 1;
+      const DOWN = -1;
+      var buttons = [
+        "Remake",
+        "Recycle",
+        "Home",
+        "Find",
+        "Repair"
+      ]
+
+      var buttons_dict = {
+        "Home": {
+          "Title": "<h1>Home</h1>",
+          "Text": "Home",
+          "Color": "#E7F498"
+        },
+        "Recycle": {
+          "Title": "<h1>Recycle</h1>",
+          "Text": "Recycle",
+          "Color": "#99BEF6"
+        },
+        "Remake": {
+          "Title": "<h1>Remake</h1>",
+          "Text": "Remake",
+          "Color": "#85D983"
+        },
+        "Repair": {
+          "Title": "<h1>Repair</h1>",
+          "Text": "Repair",
+          "Color": "#5E68C9"
+        },
+        "Find": {
+          "Title": "<h1>Find</h1>",
+          "Text": "Find",
+          "Color": "#6AD3E1"
+        },
+      }
+      
+
+      const rotateCircle = async function (dir) {
           for(var i = 0; i < 36; i++){
-              rotation++;
+              rotation+=dir;
               document.getElementById("circWrapper").style.transform = "rotate(" + rotation + "deg)";
               await sleep(1).then(() => { console.log("World!"); });
           }
-          
+          if(dir == UP){
+            var spare = buttons[0]
+            for(var i = 0; i < 5; i++)
+            {
+              if(i == 4)
+              {
+                buttons[i] = spare;
+              }
+              else {
+                buttons[i] = buttons[i+1];
+              }
+            }
+          }
+          else {
+            var spare = buttons[4]
+            for(var i = 4; i >= 0; i--)
+            {
+              if(i == 0)
+              {
+                buttons[i] = spare;
+              }
+              else {
+                buttons[i] = buttons[i-1];
+              }
+            }
+          }
       }
 
       function homeSpoke() {
-          console.log("homeSpoke");
-          rotateCircle();
+          switch(buttons.indexOf("Home")){
+            case 0: 
+              rotateCircle(DOWN);
+            case 1:
+              rotateCircle(DOWN);
+            break;
+            case 4:
+              rotateCircle(UP);
+            case 3:
+              rotateCircle(UP);
+          }
+          document.getElementById("cont").innerHTML = buttons_dict["Home"]["Text"];
+          document.getElementById("PageText").style.color = buttons_dict["Home"]["Color"];
+          document.getElementById("PageText").innerHTML = buttons_dict["Home"]["Title"];
+      }
+
+      function recycleSpoke() {
+          switch(buttons.indexOf("Recycle")){
+            case 0: 
+              rotateCircle(DOWN);
+            case 1:
+              rotateCircle(DOWN);
+            break;
+            case 4:
+              rotateCircle(UP);
+            case 3:
+              rotateCircle(UP);
+          }
+          document.getElementById("cont").innerHTML = buttons_dict["Recycle"]["Text"];
+          document.getElementById("PageText").style.color = buttons_dict["Recycle"]["Color"];
+          document.getElementById("PageText").innerHTML = buttons_dict["Recycle"]["Title"];
+      }
+
+      function remakeSpoke() {
+          switch(buttons.indexOf("Remake")){
+            case 0: 
+              rotateCircle(DOWN);
+            case 1:
+              rotateCircle(DOWN);
+            break;
+            case 4:
+              rotateCircle(UP);
+            case 3:
+              rotateCircle(UP);
+          }
+          document.getElementById("cont").innerHTML = buttons_dict["Remake"]["Text"];
+          document.getElementById("PageText").style.color = buttons_dict["Remake"]["Color"];
+          document.getElementById("PageText").innerHTML = buttons_dict["Remake"]["Title"];
+      }
+
+      function repairSpoke() {
+          switch(buttons.indexOf("Repair")){
+            case 0: 
+              rotateCircle(DOWN);
+            case 1:
+              rotateCircle(DOWN);
+            break;
+            case 4:
+              rotateCircle(UP);
+            case 3:
+              rotateCircle(UP);
+          }
+          document.getElementById("cont").innerHTML = buttons_dict["Repair"]["Text"];
+          document.getElementById("PageText").style.color = buttons_dict["Repair"]["Color"];
+          document.getElementById("PageText").innerHTML = buttons_dict["Repair"]["Title"];
+      }
+
+      function findSpoke() {
+          switch(buttons.indexOf("Find")){
+            case 0: 
+              rotateCircle(DOWN);
+            case 1:
+              rotateCircle(DOWN);
+            break;
+            case 4:
+              rotateCircle(UP);
+            case 3:
+              rotateCircle(UP);
+          }
+          document.getElementById("cont").innerHTML = buttons_dict["Find"]["Text"];
+          document.getElementById("PageText").style.color = buttons_dict["Find"]["Color"];
+          document.getElementById("PageText").innerHTML = buttons_dict["Find"]["Title"];
       }
 
       function sleep(ms) {
@@ -29,14 +172,14 @@
   <body>
     <div class="Container">
       <div id="Navbar">
-          <div class="navbutton">Home</div>
+          <div id="logo"></div>
           <div class="navbutton">Learn</div>
           <div class="navbutton">About</div>
       </div>
       <div id="Main">
           <div id="Content">
             <input id=search placeholder="Search..."></input>
-            <div id=search_button></div>
+            <div id=search_button>?</div>
             <div id=cont>
               Welcome to Re! 
               <br>
@@ -46,6 +189,9 @@
               <br>
               Or you can visit our learn more page
             </div>
+            <div id=image>
+              Image
+            </div>
           </div>
           <div id="Circle">
             <div id="GreyCircle"></div>
@@ -54,34 +200,37 @@
                 <div id="HomeSpoke1" class="circ" onclick="homeSpoke()"></div>
               </li>
               <li>
-                <div id="FindSpoke1" class="circ"></div>
+                <div id="RecycleSpoke1" class="circ" onclick="recycleSpoke()"></div>
               </li>
               <li>
-                <div id="RepairSpoke1" class="circ"></div>
+                <div id="RemakeSpoke1" class="circ" onclick="remakeSpoke()"></div>
               </li>
               <li>
-                <div id="RemakeSpoke1" class="circ"></div>
+                <div id="RepairSpoke1" class="circ" onclick="repairSpoke()"></div>
               </li>
               <li>
-                <div id="PassSpoke1" class="circ"></div>
+                <div id="FindSpoke1" class="circ" onclick="findSpoke()"></div>
               </li>
               <li>
-                <div id="HomeSpoke2" class="circ"></div>
+                <div id="HomeSpoke2" class="circ" onclick="homeSpoke()"></div>
               </li>
               <li>
-                <div id="FindSpoke2" class="circ"></div>
+                <div id="RecycleSpoke2" class="circ" onclick="recycleSpoke()"></div>
               </li>
               <li>
-                <div id="RepairSpoke2" class="circ"></div>
+                <div id="RemakeSpoke2" class="circ" onclick="remakeSpoke()"></div>
               </li>
               <li>
-                <div id="RemakeSpoke2" class="circ"></div>
+                <div id="RepairSpoke2" class="circ" onclick="repairSpoke()"></div>
               </li>
               <li>
-                <div id="PassSpoke2" class="circ"></div>
+                <div id="FindSpoke2" class="circ" onclick="findSpoke()"></div>
               </li>
             </ul>
               <div id="CenterCircle"></div>
+              <div id="PageText">
+                <h1>Home</h1>
+              </div>
           </div>
       </div>
     </div>

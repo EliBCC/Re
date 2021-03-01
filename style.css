@@ -1,9 +1,10 @@
 html, body {
     margin:0;
     overflow: hidden;
-    background-color: whitesmoke;
+    background-color: #1E4263;
     height: 100vh;
     width: 100vw;
+    color: white;
 }
 
 .Container {
@@ -19,22 +20,27 @@ html, body {
     width: 100vw;
     width: 100vw;
     height: 85px;
-    background-color: hsl(109, 26%, 73%);
+    background-color: transparent;
     justify-items: right;
+}
+
+#logo {
+    background-color: #E7F498;
+    width: 85px;
+    height: 85px;
+    position: absolute;
 }
 
 .navbutton {
     float: right;
     font-size: 18px;
     text-align: center;
-    background-color: hsl(109, 100%, 20%);  
-    color:  hsl(0, 100%, 100%);
+    background-color: transparent; 
     margin-left: 0px;
     margin-right: 0px;
     height: 85px;
     width: 170px;
     line-height: 85px;
-    border-left: 1px solid hsl(109, 39%, 66%); 
 }
 
 #Main {
@@ -52,32 +58,44 @@ html, body {
 }
 
 #search {
-    width: 200px;
+    width: 300px;
     height: 20px;
-    /* border: 3px solid #00B4CC;
-    border-right: none;
-    border-radius: 5px 0 0 5px;
-    outline: none;
-    color: #9DBFAF; */
     position: absolute;
     margin-top: 100px;
     margin-left: 250px;
-    border: 5px solid hsl(109, 100%, 20%);
+    border: 5px solid #99BEF7;
+    border-radius: 5px 5px 5px 5px;
+}
+
+#search_button {
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    margin-top: 100px;
+    margin-left: 550px;
+    background-color: #99BEF6;
+    border: 6px solid #99BEF7;
     border-radius: 5px 5px 5px 5px;
 }
 
 #cont {
     width: 725px;
-    height: 500px;
+    height: 200px;
     margin-top: 150px;
     margin-left: 75px;
+    border-color: black;
+    border-style: dashed;
+    position: absolute;
 }
 
-#search {
-    width: 300px;
+#image {
+    width: 725px;
+    height: 200px;
+    margin-top: 400px;
+    margin-left: 75px;
+    border-color: black;
+    border-style: dashed;
     position: absolute;
-    margin-top: 100px;
-
 }
 
 #Circle {
@@ -88,6 +106,8 @@ html, body {
 
 #GreyCircle {
     background-color: grey;
+    margin-top: 90px;
+    margin-left: 210px;
     padding: 0;
     width: 550px;
     height: 550px;
@@ -100,7 +120,8 @@ html, body {
 #circWrapper {
     position: absolute;
     padding: 0;
-    margin-top: 0;
+    margin-top: 90px;
+    margin-left: 210px;
     width: 550px;
     height: 550px;
     border-radius: 50%;
@@ -169,55 +190,61 @@ li:nth-child(10) {
 
 
 li:first-child .circ {
-    background: green;
+    background: #E7F498;
 }
 
 li:nth-child(2) .circ {
-    background: tomato;
+    background: #99BEF6;
   }
   
   li:nth-child(3) .circ {
-    background: aqua;
+    background: #85D983;
   }
   
   li:nth-child(4) .circ {
-    background: yellow;
+    background: #5E68C9;
   }
   
   li:nth-child(5) .circ {
-    background: blue;
+    background: #6AD3E1;
   }
 
   li:nth-child(6) .circ {
-      background: green;
+    background: #E7F498;
   }
 
   li:nth-child(7) .circ {
-    background: tomato;
+    background: #99BEF6;
 }
     
 li:nth-child(8) .circ {
-    background: aqua;
+    background: #85D983;
 }
 
 li:nth-child(9) .circ {
-    background: yellow;
+    background: #5E68C9;
 }
 
 li:nth-child(10) .circ {
-    background: blue;
-}
-
-#HomeSpoke1:hover {
-    background:hsl(109, 39%, 66%)
+    background: #6AD3E1;
 }
 
 #CenterCircle {
     height: 450px;
+    margin-top: 90px;
+    margin-left: 210px;
     width: 450px;
-    background-color: white;
+    background-color: #1E4263;
     border-radius: 50%;
     position:absolute;
     z-index: 1000;
     transform: translateY(50px) translateX(50px);
+}
+#PageText {
+    position: absolute;
+    margin-top: 325px;
+    margin-left: 375px;
+    transform: rotate(-90deg);
+    z-index: 1001;
+    color: #E7F498;
 }
